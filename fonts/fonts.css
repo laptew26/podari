@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Exo 2';
+    src: local('Exo 2 Light'), local('Exo2-Light'), url('exo2light.woff2') format('woff2'), url('exo2light.woff') format('woff'), url('exo2light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Exo 2';
+    src: local('Exo 2'), local('Exo2-Regular'), url('exo2.woff2') format('woff2'), url('exo2.woff') format('woff'), url('exo2.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Exo 2';
+    src: local('Exo 2 Medium'), local('Exo2-Medium'), url('exo2medium.woff2') format('woff2'), url('exo2medium.woff') format('woff'), url('exo2medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Nautilus Pompilius';
+    src: local('Nautilus Pompilius'), local('NautilusPompilius'), url('nautiluspompilius.woff2') format('woff2'), url('nautiluspompilius.woff') format('woff'), url('nautiluspompilius.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('MyriadPro-Regular.eot');
+    src: local('Myriad Pro Regular'), local('MyriadPro-Regular'),
+    url('MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
+    url('MyriadPro-Regular.woff') format('woff'),
+    url('MyriadPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: simpleiriska;
+    src: local('simpleiriska'),url("simple.ttf");
+    font-weight: 400;
+    font-style: normal;
+}

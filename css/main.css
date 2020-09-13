@@ -1,0 +1,110 @@
+/* Спецификации */
+
+*{
+
+}
+
+body{
+
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Топ меню */
+
+.header{
+    height: 40px;
+    background:url("../img/topBack.png");
+}
+
+.header::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 11px;
+    background: url("../img/topWave.png");
+    top: 0;
+    left: 0;
+    overflow: visible;
+}
+
+.menu{
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    font-family: "Exo 2.0 Medium";
+    padding-top: 20px;
+}
+
+.menu__item{
+    display: inline;
+    font-size: 14px;
+}
+
+.menu__item a{
+    color: #444444;
+}
+
+.menu__item a:hover{
+    color: #636363;
+    text-decoration: underline;
+}
+
+.social{
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    padding-top: 20px;
+}
+
+.social__item{
+    display: inline;
+    font-size: 14px;
+    padding-left: 10px;
+    height: 32px;
+    width: 32px;
+}
+
+.social__item a{
+    color: #444444;
+}
+
+.social__item a:hover{
+    color: #3b70a1;
+    border-radius: 50%;
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+}
+
+/* Баннер и лого */
+
+
+
+/* Корзина */
+
+
+
+/* Популярные категории */
+
+
+
+/* Популярные товары */
+
+
+
+/* Группировка фильтов */
+
+
+
+/* СЕО текст */
+
+
+
+/* Подписка */
+
+
+
+/* Футер */
