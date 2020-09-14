@@ -17,7 +17,7 @@ a{
 .top{
     position: relative;
     height: 40px;
-    background:url("../img/topBack.png");
+    background: url("../img/topBack.png");
 }
 
 .top::before{
@@ -38,7 +38,7 @@ a{
     margin: 0;
     padding-left: 0;
     font-family: "Exo 2.0 Medium";
-    padding-top: 10px;
+    padding-top: 8px;
 }
 
 .menu__item{
@@ -57,14 +57,14 @@ a{
 }
 
 .social{
-
+    padding-top: 5px;
 }
 
 .social__item{
     min-width: 40px;
     min-height: 40px;
-    padding-top: 5px;
     text-align: center;
+    padding-top: 5px;
     color: #444444;
 }
 
@@ -76,6 +76,7 @@ a{
     color: #3b70a1;
     background: #ffffff;
     border: 3px solid #ffe5ad;
+    padding-top: 5px;
     border-radius: 50%;
     text-align: center;
 }
@@ -83,7 +84,17 @@ a{
 /* Баннер и лого */
 
 .banner{
+    height: 380px;
     padding-top: 40px;
+    background: url("../img/backPopCat.png") repeat-x bottom;
+}
+
+.banner__logo{
+    padding-left: 35px;
+}
+
+.banner__slider{
+
 }
 
 /* Корзина */
