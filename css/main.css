@@ -14,20 +14,23 @@ a{
 
 /* Топ меню */
 
-.header{
+.top{
+    position: relative;
     height: 40px;
     background:url("../img/topBack.png");
 }
 
-.header::after{
+.top::before{
     content: '';
     position: absolute;
     width: 100%;
-    height: 11px;
+    height: 20px;
     background: url("../img/topWave.png");
-    top: 0;
+    bottom: -10px;
     left: 0;
+    z-index: -1;
     overflow: visible;
+    /*box-shadow: inset 0px -6px 5px 4px rgba(0,0,0,0.2);*/
 }
 
 .menu{
@@ -35,12 +38,13 @@ a{
     margin: 0;
     padding-left: 0;
     font-family: "Exo 2.0 Medium";
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .menu__item{
     display: inline;
     font-size: 14px;
+    padding-right: 26px;
 }
 
 .menu__item a{
@@ -53,39 +57,38 @@ a{
 }
 
 .social{
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-    padding-top: 20px;
+
 }
 
 .social__item{
-    display: inline;
-    font-size: 14px;
-    padding-left: 10px;
-    height: 32px;
-    width: 32px;
+    min-width: 40px;
+    min-height: 40px;
+    padding-top: 5px;
+    text-align: center;
+    color: #444444;
 }
 
 .social__item a{
     color: #444444;
 }
 
-.social__item a:hover{
+.social__item:hover{
     color: #3b70a1;
+    background: #ffffff;
+    border: 3px solid #ffe5ad;
     border-radius: 50%;
-    background-color: #fff;
-    border: none;
-    padding: 10px;
+    text-align: center;
 }
 
 /* Баннер и лого */
 
-
+.banner{
+    padding-top: 40px;
+}
 
 /* Корзина */
 
-
+/*Позже*/
 
 /* Популярные категории */
 
