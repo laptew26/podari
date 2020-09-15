@@ -12,7 +12,13 @@ a{
     text-decoration: none;
 }
 
+.cl-lg-6{
+    width: 50% ;
+}
 
+.ml-auto{
+    float: right;
+}
 /* Топ меню */
 
 .top{
@@ -77,7 +83,7 @@ a{
     color: #3b70a1;
     background: #ffffff;
     border: 3px solid #ffe5ad;
-    line-height: 120%
+    line-height: 120%;
     padding-top: 5px;
     border-radius: 50%;
     text-align: center;
@@ -143,11 +149,11 @@ a{
     border-radius: 10px;
     position: relative;
     background: #fdec7d;
-    background: radial-gradient(#ffffff, rgba(253,236,125));
+    background: radial-gradient(#ffffff, rgba(253,236,125,1));
 }
 
 .categories__electronics img{
-  background-image: url("");
+  background-image: url("#");
   position: absolute;
   min-width: 274px;
   min-height: 274px;
@@ -290,7 +296,7 @@ a{
 }
 
 .categories__leather img{
-  background-image: url("");
+  background-image: url("#");
   position: absolute;
   min-width: 274px;
   min-height: 274px;
@@ -326,7 +332,7 @@ a{
 }
 
 .categories__accessories img{
-  background-image: url("");
+  background-image: url("#");
   position: absolute;
   min-width: 274px;
   min-height: 274px;
@@ -469,7 +475,7 @@ a{
 }
 
 .categories__wow img{
-  background-image: url("");
+  background-image: url("#");
   position: absolute;
   min-width: 274px;
   min-height: 274px;
@@ -519,7 +525,14 @@ a{
 }
 /* Подписка */
 
+.footer{
+    background: #fff;
+}
 
-
+.footer p{
+    width: 370px;
+    font-family: "Exo 2";
+    font-size: 14px;
+}
 /* Футер */
 
