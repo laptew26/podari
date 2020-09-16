@@ -12,28 +12,12 @@ a{
     text-decoration: none;
 }
 
-.r{
-    text-align: right; /* Колох */
-}
 /* Топ меню */
 
 .top{
-    position: relative;
     height: 40px;
-    background: url("../img/topBack.png"); /* Колхоз */
-}
-
-.top::before{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 20px;
-    background: url("../img/topWave.png"); /* Колхоз */
-    bottom: -10px;
-    left: 0;
-    z-index: -1;
-    overflow: visible;
-    /*box-shadow: inset 0px -6px 5px 4px rgba(0,0,0,0.2);*/
+    z-index: 5;
+    background: url("../img/topBack.png") repeat-x; /* Колхоз */
 }
 
 .menu{
@@ -77,26 +61,31 @@ a{
 }
 
 .social__item:hover {
-    color: #3b70a1;
     background: #ffffff;
     border: 3px solid #ffe5ad;
     line-height: 120%;
-    padding-top: 7px;
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
 }
 
+.social__item:hover a{
+    color: #3b70a1;
+    top: -1px;
+    position: relative;
+}
+
 /* Баннер и лого */
 
 .banner{
+    position: relative;
     height: 380px;
     padding-top: 40px;
     background: url("../img/bannerBack.png") repeat-x bottom;
 }
 
 .banner__logo{
-    padding-left: 35px;
+    padding-left: 80px;
 }
 
 .banner__slider{
@@ -112,6 +101,7 @@ a{
 .categories{
     position: relative;
     background: url("../img/catPat.png");
+    padding-bottom: 30px;
 }
 
 .categories::before{
@@ -122,7 +112,7 @@ a{
     background: url("../img/catTop.png");
     top: -10px;
     left: 0;
-    z-index: 0;
+    z-index: 4;
     overflow: visible;
 }
 
@@ -134,29 +124,31 @@ a{
     background: url("../img/catBot.png");
     bottom: -10px;
     left: 0;
-    z-index: 0;
+    z-index: 4;
     overflow: visible;
 }
 
 /* Электроника */
 .categories__electronics{
     margin-top: 55px;
-    min-height: 274px;
-    min-width: 274px;
+    min-height: 275px;
+    min-width: 275px;
     border-radius: 10px;
     position: relative;
+    overflow: hidden;
     z-index: 1;
     background: #fdec7d;
     background: radial-gradient(#ffffff, rgba(253,236,125,1));
 }
 
 .categories__electronics img{
-  background: url("../img/cat1-1.png") no-repeat;
   position: absolute;
-  min-width: 274px;
-  min-height: 274px;
-  z-index: 3;
-  margin-top: -10px;
+  overflow: hidden;
+  min-width: 220px;
+  min-height: 220px;
+  margin-top: 15px;
+  margin-left: 15px;
+  z-index: 2;
 }
 
 .categories__electronics span{
@@ -164,15 +156,14 @@ a{
     position: absolute;
     bottom: 0;
     min-height: 40px;
-    min-width: 274px;
+    min-width: 275px;
     background: rgba(255,255,255,0.75);
-    border-radius: 10px;
     font-size: 20px;
     color: #444444;
-    z-index: 2;
+    z-index: 3;
     font-weight: 300;
     font-family: "Exo 2";
-    padding-top: 5px;
+    margin-top: 5px;
 }
 
 .categories__electronics:hover:after {
@@ -195,59 +186,98 @@ a{
     position: absolute;
     width: 164px;
     height: 50px;
+    cursor: pointer;
     background: url("../img/catHover.png") 0 0 no-repeat;
     z-index: 5;
-    top: 50%;
+    top: 40%;
     left: 20%;
 }
 
 /* Брелки и прочее */
 .categories__keychains{
-    min-width: 274px;
+    min-width: 275px;
     position: relative;
-    min-height: 179px;
-    margin-top: 25px;
+    min-height: 129px;
+    margin-top: 16px;
+    overflow: hidden;
     z-index: 1;
     border-radius: 10px;
     background: #fdec7d;
     background: radial-gradient(#ffffff, #a2d5fd);
+}
+
+.categories__keychains img{
+    position: absolute;
+    margin-top: -40px;
+    min-width: 275px;
+    min-height: 129px;
+    z-index: 2;
 }
 
 .categories__keychains span{
     text-align: center;
     position: absolute;
     bottom: 0;
-    z-index: 2;
+    z-index: 3;
     min-height: 40px;
-    min-width: 274px;
+    min-width: 275px;
     background: rgba(255,255,255,0.75);
-    border-radius: 10px;
     font-size: 20px;
     color: #444444;
     font-weight: 300;
     font-family: "Exo 2";
-    padding-top: 5px;
+    margin-top: 5px;
 }
 
-.categories__keychains img{
-    background: url("../img/cat1-2.png") no-repeat;
+.categories__keychains:hover:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    min-width: 274px;
-    min-height: 179px;
-    z-index: 3;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 10px;
+    opacity: 0.75;
+}
+
+.categories__keychains:hover:before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 164px;
+    height: 50px;
+    cursor: pointer;
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    z-index: 5;
+    top: 25%;
+    left: 20%;
 }
 
 /* Копилки и шкатулки */
 .categories__moneybox{
-    min-width: 274px;
+    min-width: 275px;
     position: relative;
-    min-height: 179px;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    min-height: 129px;
+    margin-top: 16px;
+    margin-bottom: 26px;
+    overflow: hidden;
     z-index: 1;
     border-radius: 10px;
     background: #fdec7d;
     background: radial-gradient(#ffffff, #a2d5fd);
+}
+
+.categories__moneybox img{
+    position: absolute;
+    margin-left: 70px;
+    overflow: hidden;
+    margin-top: -5px;
+    min-width: 10px;
+    max-height: 110px;
+    z-index: 2;
 }
 
 .categories__moneybox span{
@@ -255,28 +285,63 @@ a{
     position: absolute;
     bottom: 0;
     min-height: 40px;
-    min-width: 274px;
-    z-index: 2;
+    min-width: 275px;
+    z-index: 3;
     background: rgba(255,255,255,0.75);
-    border-radius: 10px;
     font-size: 20px;
     color: #444444;
     font-weight: 300;
     font-family: "Exo 2";
-    padding-top: 5px;
+    margin-top: 5px;
+}
+
+.categories__moneybox:hover:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 10px;
+    opacity: 0.75;
+}
+
+.categories__moneybox:hover:before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 164px;
+    height: 50px;
+    cursor: pointer;
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    z-index: 5;
+    top: 25%;
+    left: 20%;
 }
 
 /* Интерьер */
 .categories__interior{
     margin-top: 55px;
     margin-left: 20px;
-    min-width: 274px;
+    min-width: 275px;
+    overflow: hidden;
     z-index: 1;
     position: relative;
-    min-height: 179px;
+    min-height: 129px;
     border-radius: 10px;
     background: #fdec7d;
     background: radial-gradient(#ffffff, #ffbc68);
+}
+
+.categories__interior img{
+    position: absolute;
+    margin-top: 5px;
+    min-width: 275px;
+    min-height: 129px;
+    z-index: 2;
 }
 
 .categories__interior span{
@@ -284,10 +349,9 @@ a{
     position: absolute;
     bottom: 0;
     height: 40px;
-    z-index: 2;
-    width: 274px;
+    z-index: 3;
+    width: 275px;
     background: rgba(255,255,255,0.75);
-    border-radius: 10px;
     font-size: 20px;
     color: #444444;
     font-weight: 300;
@@ -295,17 +359,54 @@ a{
     padding-top: 5px;
 }
 
+.categories__interior:hover:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 10px;
+    opacity: 0.75;
+}
+
+.categories__interior:hover:before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 164px;
+    height: 50px;
+    cursor: pointer;
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    z-index: 5;
+    top: 25%;
+    left: 20%;
+}
+
 /* Канцелярия */
 .categories__office{
-    margin-top: 25px;
+    margin-top: 16px;
     margin-left: 20px;
-    min-width: 274px;
+    min-width: 275px;
     z-index: 1;
+    overflow: hidden;
     position: relative;
-    min-height: 179px;
+    min-height: 129px;
     border-radius: 10px;
     background: #fdec7d;
     background: radial-gradient(#ffffff, #ffbc68);
+}
+
+.categories__office img{
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 45px;
+    max-width: 275px;
+    min-height: 110px;
+    z-index: 2;
 }
 
 .categories__office span{
@@ -313,24 +414,51 @@ a{
     position: absolute;
     bottom: 0;
     height: 40px;
-    z-index: 2;
-    width: 274px;
+    z-index: 3;
+    width: 275px;
     background: rgba(255,255,255,0.75);
-    border-radius: 10px;
     font-size: 20px;
     color: #444444;
     font-weight: 300;
     font-family: "Exo 2";
-    padding-top: 5px;
+    margin-top: 5px;
+}
+
+.categories__office:hover:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 10px;
+    opacity: 0.75;
+}
+
+.categories__office:hover:before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 164px;
+    height: 50px;
+    cursor: pointer;
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    z-index: 5;
+    top: 25%;
+    left: 20%;
 }
 
 /* Кожанные изделия */
 .categories__leather{
-    margin-top: 25px;
+    margin-top: 16px;
     margin-left: 20px;
-    min-height: 274px;
+    min-height: 275px;
     z-index: 1;
-    min-width: 274px;
+    min-width: 275px;
+    overflow: hidden;
     border-radius: 10px;
     position: relative;
     background: #fdec7d;
@@ -338,23 +466,22 @@ a{
 }
 
 .categories__leather img{
-  background-image: url("../img/cat2-3.png");
   position: absolute;
-  min-width: 274px;
-  z-index: 3;
-  min-height: 274px;
-  margin-top: -10px;
+  min-width: 220px;
+  z-index: 2;
+  min-height: 110px;
+  margin-top: 30px;
+  margin-left: 10px;
 }
 
 .categories__leather span{
     text-align: center;
     position: absolute;
     bottom: 0;
-    z-index: 2;
+    z-index: 3;
     min-height: 40px;
-    min-width: 274px;
+    min-width: 275px;
     background: rgba(255,255,255,0.75);
-    border-radius: 10px;
     font-size: 20px;
     color: #444444;
     font-weight: 300;
@@ -362,13 +489,41 @@ a{
     padding-top: 5px;
 }
 
+.categories__leather:hover:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 10px;
+    opacity: 0.75;
+}
+
+.categories__leather:hover:before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 164px;
+    height: 50px;
+    cursor: pointer;
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    z-index: 5;
+    top: 40%;
+    left: 20%;
+}
+
 /* Аксессуары для телефона */
 .categories__accessories{
     margin-left: 20px;
     margin-top: 55px;
-    min-height: 274px;
-    min-width: 274px;
+    min-height: 275px;
+    min-width: 275px;
     z-index: 1;
+    overflow: hidden;
     border-radius: 10px;
     position: relative;
     background: #fdec7d;
@@ -376,23 +531,21 @@ a{
 }
 
 .categories__accessories img{
-  background-image: url("#");
   position: absolute;
-  min-width: 274px;
-  min-height: 274px;
-  z-index: 3;
-  margin-top: -10px;
+  min-width: 275px;
+  min-height: 140px;
+  z-index: 2;
+  margin-top: 20px;
 }
 
 .categories__accessories span{
     text-align: center;
     position: absolute;
     bottom: 0;
-    z-index: 2;
+    z-index: 3;
     min-height: 40px;
-    min-width: 274px;
+    min-width: 275px;
     background: rgba(255,255,255,0.75);
-    border-radius: 10px;
     font-size: 20px;
     color: #444444;
     font-weight: 300;
@@ -400,17 +553,54 @@ a{
     padding-top: 5px;
 }
 
+.categories__accessories:hover:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 10px;
+    opacity: 0.75;
+}
+
+.categories__accessories:hover:before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 164px;
+    height: 50px;
+    cursor: pointer;
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    z-index: 5;
+    top: 40%;
+    left: 20%;
+}
+
 /* Изделия из дерева */
 .categories__wood{
-    min-width: 274px;
+    min-width: 275px;
     margin-left: 20px;
     position: relative;
-    min-height: 179px;
+    min-height: 129px;
     z-index: 1;
-    margin-top: 25px;
+    margin-top: 16px;
+    overflow: hidden;
     border-radius: 10px;
     background: #fdec7d;
     background: radial-gradient(#ffffff, #79d2d3);
+}
+
+.categories__wood img{
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 50px;
+    max-width: 275px;
+    min-height: 80px;
+    z-index: 2;
 }
 
 .categories__wood span{
@@ -418,10 +608,9 @@ a{
     position: absolute;
     bottom: 0;
     min-height: 40px;
-    min-width: 274px;
-    z-index: 2;
+    min-width: 275px;
+    z-index: 3;
     background: rgba(255,255,255,0.75);
-    border-radius: 10px;
     font-size: 20px;
     color: #444444;
     font-weight: 300;
@@ -429,17 +618,53 @@ a{
     padding-top: 5px;
 }
 
+.categories__wood:hover:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 10px;
+    opacity: 0.75;
+}
+
+.categories__wood:hover:before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 164px;
+    height: 50px;
+    cursor: pointer;
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    z-index: 5;
+    top: 25%;
+    left: 20%;
+}
+
 /* Посуда */
 .categories__dishes{
-    min-width: 274px;
+    min-width: 275px;
     margin-left: 20px;
     z-index: 1;
     position: relative;
-    min-height: 179px;
-    margin-top: 25px;
+    overflow: hidden;
+    min-height: 129px;
+    margin-top: 16px;
     border-radius: 10px;
     background: #fdec7d;
     background: radial-gradient(#ffffff, #79d2d3);
+}
+
+.categories__dishes img{
+    position: absolute;
+    margin-left: 25px;
+    max-width: 275px;
+    min-height: 110px;
+    z-index: 2;
 }
 
 .categories__dishes span{
@@ -447,27 +672,63 @@ a{
     position: absolute;
     bottom: 0;
     min-height: 40px;
-    min-width: 274px;
-    z-index: 2;
+    min-width: 275px;
+    z-index: 3;
     background: rgba(255,255,255,0.75);
-    border-radius: 10px;
     font-size: 20px;
     color: #444444;
     font-weight: 300;
     font-family: "Exo 2";
     padding-top: 5px;
 }
+
+.categories__dishes:hover:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 10px;
+    opacity: 0.75;
+}
+
+.categories__dishes:hover:before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 164px;
+    height: 50px;
+    cursor: pointer;
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    z-index: 5;
+    top: 25%;
+    left: 20%;
+}
+
 /* Настольные игры */
 .categories__board{
     margin-top: 55px;
     margin-left: 20px;
-    min-width: 274px;
+    min-width: 275px;
     z-index: 1;
+    overflow: hidden;
     position: relative;
-    min-height: 179px;
+    min-height: 129px;
     border-radius: 10px;
     background: #fdec7d;
-    background: radial-gradient(#ffffff, #ffbc68);
+    background: radial-gradient(#ffffff, #e87f9a);
+}
+
+.categories__board img{
+    position: absolute;
+    margin-left: 45px;
+    max-width: 190px;
+    min-height: 129px;
+    z-index: 2;
 }
 
 .categories__board span{
@@ -475,10 +736,9 @@ a{
     position: absolute;
     bottom: 0;
     height: 40px;
-    z-index: 2;
-    width: 274px;
+    z-index: 3;
+    width: 275px;
     background: rgba(255,255,255,0.75);
-    border-radius: 10px;
     font-size: 20px;
     color: #444444;
     font-weight: 300;
@@ -486,17 +746,53 @@ a{
     padding-top: 5px;
 }
 
+.categories__board:hover:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 10px;
+    opacity: 0.75;
+}
+
+.categories__board:hover:before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 164px;
+    height: 50px;
+    cursor: pointer;
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    z-index: 5;
+    top: 25%;
+    left: 20%;
+}
+
 /* Часы */
 .categories__clock{
-    margin-top: 25px;
+    margin-top: 16px;
     margin-left: 20px;
-    min-width: 274px;
+    min-width: 275px;
     position: relative;
-    min-height: 179px;
+    overflow: hidden;
+    min-height: 129px;
     z-index: 1;
     border-radius: 10px;
     background: #fdec7d;
-    background: radial-gradient(#ffffff, #ffbc68);
+    background: radial-gradient(#ffffff, #e87f9a);
+}
+
+.categories__clock img{
+    position: absolute;
+    margin-left: 50px;
+    max-width: 190px;
+    min-height: 129px;
+    z-index: 2;
 }
 
 .categories__clock span{
@@ -504,8 +800,8 @@ a{
     position: absolute;
     bottom: 0;
     height: 40px;
-    z-index: 2;
-    width: 274px;
+    z-index: 3;
+    width: 275px;
     background: rgba(255,255,255,0.75);
     border-radius: 10px;
     font-size: 20px;
@@ -515,26 +811,84 @@ a{
     padding-top: 5px;
 }
 
+.categories__clock:hover:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 10px;
+    opacity: 0.75;
+}
+
+.categories__clock:hover:before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 164px;
+    height: 50px;
+    cursor: pointer;
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    z-index: 5;
+    top: 25%;
+    left: 20%;
+}
+
+.categories__clock span:hover:before{
+    visibility: hidden;
+}
+
 /* Wow */
 .categories__wow{
-    margin-top: 25px;
-    margin-left: 20px;
-    min-height: 274px;
-    min-width: 274px;
-    z-index: 1;
-    border-radius: 10px;
-    position: relative;
-    background: #fdec7d;
-    background: radial-gradient(#ffffff, #f1a97e);
+margin-top: 16px;
+margin-left: 20px;
+min-height: 275px;
+min-width: 275px;
+/*overflow: hidden;*/
+z-index: 1;
+border-radius: 10px;
+position: relative;
+background: #fdec7d;
+background: radial-gradient(#ffffff, #f1a97e);
 }
 
 .categories__wow img{
-  background-image: url("#");
-  position: absolute;
-  min-width: 274px;
-  min-height: 274px;
-  z-index: 3;
-  margin-top: -10px;
+position: absolute;
+min-width: 275px;
+min-height: 275px;
+z-index: 2;
+margin-left: -5px;
+}
+
+.categories__wow:hover:after {
+content: "";
+display: block;
+width: 100%;
+height: 100%;
+position: absolute;
+z-index: 4;
+top: 0;
+left: 0;
+background: #fff;
+border-radius: 10px;
+opacity: 0.75;
+}
+
+.categories__wow:hover:before{
+content: "";
+display: inline-block;
+position: absolute;
+width: 164px;
+height: 50px;
+cursor: pointer;
+background: url("../img/catHover.png") 0 0 no-repeat;
+z-index: 5;
+top: 40%;
+left: 20%;
 }
 
 /* Популярные товары */
@@ -553,7 +907,83 @@ a{
 */
 /* Группировка фильтов */
 
+.filters{
+background: #ffc55a;
+height: 470px;
+text-align: center;
+position: relative;
+z-index: 1;
+}
 
+/*.filters::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background: url("../img/filtersBack.png");
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    overflow: visible;
+}*/
+
+.filters h2{
+margin-top: 60px;
+font-size: 40px;
+color: #ffffff;
+font-weight: 400;
+font-family: "Nautilus Pompilius";
+}
+
+.filters p{
+margin-top: -10px;
+font-size: 20px;
+color: #ffffff;
+font-weight: 400;
+font-family: "Exo 2";
+}
+
+.filters__menu{
+    padding-top: 5px;
+}
+
+.filters__menu-item-circle{
+    min-width: 193px;
+    min-height: 193px;
+    text-align: center;
+    margin-left: 34px;
+    padding-top: 7px;
+    background: #ffffff;
+    border: 3px solid #ffe5ad;
+    line-height: 120%;
+    border-radius: 50%;
+}
+
+.filters__menu-item-circle a{
+    color: #444444;
+}
+
+.filters__menu-item-circle:hover {
+    background: #ffffff;
+    border: 3px solid #d17185;
+    line-height: 120%;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.filters__menu-item p{
+    margin-left: 40px;
+    margin-top: 15px;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: "Nautilus Pompilius";
+}
+
+.filters__menu-item p:hover{
+    color: #a4149f;
+    cursor: default;
+}
 
 /* СЕО текст */
 
@@ -570,15 +1000,40 @@ a{
 }
 
 .seo__text p{
-    width: 537px;
     font-size: 16px;
+    width: 537px;
     line-height: 22px;
     color: #444444;
     font-weight: 300;
     font-family: "Exo 2";
 }
 
+.seo_banner{
 
+}
+
+.seoBallon{
+    margin-top: 55px;
+}
+
+.seo__banner p{
+    width: 313px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 300;
+    font-family: "Exo 2";
+    text-align: right;
+    padding-top: 30px;
+}
+
+.seo__banner a{
+    color: #a4149f;
+    text-decoration: none;
+}
+
+.seo__banner a:hover{
+    color: #a4149f;
+}
 /* Подписка */
 
 
