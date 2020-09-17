@@ -1,1051 +1,1165 @@
-/* Спецификации */
+* {}
 
-*{
+body {}
 
-}
-
-body{
-
-}
-
-a{
+a {
     text-decoration: none;
 }
 
-/* Топ меню */
-
-.top{
-    height: 40px;
-    z-index: 5;
-    background: url("../img/topBack.png") repeat-x; /* Колхоз */
+.top {
+    background: url("../img/topBack.png") repeat-x;
+    background-size: contain;
+    height: 60px;
+    z-index: 10;
 }
 
-.menu{
+.menu {
+    font-family: "Exo 2.0 Medium";
     list-style: none;
     margin: 0;
-    padding-left: 0;
-    font-family: "Exo 2.0 Medium";
-    padding-top: 8px;
     max-width: 820px;
+    padding-left: 0;
+    padding-top: 8px;
 }
 
-.menu__item{
+.menu__item {
     display: inline;
     font-size: 14px;
     padding-right: 25px;
 }
 
-.menu__item a{
+.menu__item a {
     color: #444444;
 }
 
-.menu__item a:hover{
+.menu__item a:hover {
     color: #636363;
     text-decoration: underline;
 }
 
-.social{
+.social {
     padding-top: 5px;
 }
 
-.social__item{
-    min-width: 40px;
-    min-height: 40px;
-    text-align: center;
-    padding-top: 7px;
+.social__item {
     color: #444444;
+    min-height: 40px;
+    min-width: 40px;
+    padding-top: 7px;
+    text-align: center;
 }
 
-.social__item a{
+.social__item a {
     color: #444444;
 }
 
 .social__item:hover {
     background: #ffffff;
     border: 3px solid #ffe5ad;
-    line-height: 120%;
     border-radius: 50%;
-    text-align: center;
     cursor: pointer;
+    line-height: 120%;
+    text-align: center;
 }
 
-.social__item:hover a{
+.social__item:hover a {
     color: #3b70a1;
+    position: relative;
     top: -1px;
-    position: relative;
 }
 
-/* Баннер и лого */
-
-.banner{
-    position: relative;
-    height: 380px;
-    padding-top: 40px;
+.banner {
     background: url("../img/bannerBack.png") repeat-x bottom;
+    height: 360px;
+    padding-top: 40px;
+    position: relative;
+    z-index: 9;
 }
 
-.banner__logo{
+.banner__logo {
     padding-left: 80px;
 }
 
-.banner__slider{
+.banner__slider {}
 
-}
-
-/* Корзина */
-
-/*Позже*/
-
-/* Популярные категории */
-
-.categories{
-    position: relative;
+.categories {
     background: url("../img/catPat.png");
     padding-bottom: 30px;
+    position: relative;
 }
 
-.categories::before{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 20px;
+.categories::before {
     background: url("../img/catTop.png");
-    top: -10px;
+    content: '';
+    height: 20px;
     left: 0;
-    z-index: 4;
     overflow: visible;
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    z-index: 4;
 }
 
-.categories::after{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 20px;
+.categories::after {
     background: url("../img/catBot.png");
     bottom: -10px;
+    content: '';
+    height: 20px;
     left: 0;
-    z-index: 4;
     overflow: visible;
+    position: absolute;
+    width: 100%;
+    z-index: 4;
 }
 
-/* Электроника */
-.categories__electronics{
+.categories__electronics {
+    background: #fdec7d;
+    background: radial-gradient(#ffffff, rgba(253, 236, 125, 1));
+    border-radius: 10px;
     margin-top: 55px;
     min-height: 275px;
     min-width: 275px;
-    border-radius: 10px;
-    position: relative;
     overflow: hidden;
+    position: relative;
     z-index: 1;
-    background: #fdec7d;
-    background: radial-gradient(#ffffff, rgba(253,236,125,1));
 }
 
-.categories__electronics img{
-  position: absolute;
-  overflow: hidden;
-  min-width: 220px;
-  min-height: 220px;
-  margin-top: 15px;
-  margin-left: 15px;
-  z-index: 2;
-}
-
-.categories__electronics span{
-    text-align: center;
+.categories__electronics img {
+    margin-left: 15px;
+    margin-top: 15px;
+    min-height: 220px;
+    min-width: 220px;
+    overflow: hidden;
     position: absolute;
+    z-index: 2;
+}
+
+.categories__electronics span {
+    background: rgba(255, 255, 255, 0.75);
     bottom: 0;
+    color: #444444;
+    font-family: "Exo 2";
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 5px;
     min-height: 40px;
     min-width: 275px;
-    background: rgba(255,255,255,0.75);
-    font-size: 20px;
-    color: #444444;
+    position: absolute;
+    text-align: center;
     z-index: 3;
-    font-weight: 300;
-    font-family: "Exo 2";
-    margin-top: 5px;
 }
 
 .categories__electronics:hover:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 4;
-    top: 0;
-    left: 0;
     background: #fff;
     border-radius: 10px;
-    opacity: 0.75;
-}
-
-.categories__electronics:hover:before{
     content: "";
-    display: inline-block;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.75;
     position: absolute;
-    width: 164px;
-    height: 50px;
-    cursor: pointer;
-    background: url("../img/catHover.png") 0 0 no-repeat;
-    z-index: 5;
-    top: 40%;
-    left: 20%;
+    top: 0;
+    width: 100%;
+    z-index: 4;
 }
 
-/* Брелки и прочее */
-.categories__keychains{
-    min-width: 275px;
-    position: relative;
-    min-height: 129px;
-    margin-top: 16px;
-    overflow: hidden;
-    z-index: 1;
-    border-radius: 10px;
+.categories__electronics:hover:before {
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    content: "";
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    left: 20%;
+    position: absolute;
+    top: 40%;
+    width: 164px;
+    z-index: 5;
+}
+
+.categories__keychains {
     background: #fdec7d;
     background: radial-gradient(#ffffff, #a2d5fd);
+    border-radius: 10px;
+    margin-top: 16px;
+    min-height: 129px;
+    min-width: 275px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
-.categories__keychains img{
-    position: absolute;
+.categories__keychains img {
     margin-top: -40px;
-    min-width: 275px;
     min-height: 129px;
+    min-width: 275px;
+    position: absolute;
     z-index: 2;
 }
 
-.categories__keychains span{
-    text-align: center;
-    position: absolute;
+.categories__keychains span {
+    background: rgba(255, 255, 255, 0.75);
     bottom: 0;
-    z-index: 3;
+    color: #444444;
+    font-family: "Exo 2";
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 5px;
     min-height: 40px;
     min-width: 275px;
-    background: rgba(255,255,255,0.75);
-    font-size: 20px;
-    color: #444444;
-    font-weight: 300;
-    font-family: "Exo 2";
-    margin-top: 5px;
+    position: absolute;
+    text-align: center;
+    z-index: 3;
 }
 
 .categories__keychains:hover:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 4;
-    top: 0;
-    left: 0;
     background: #fff;
     border-radius: 10px;
-    opacity: 0.75;
-}
-
-.categories__keychains:hover:before{
     content: "";
-    display: inline-block;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.75;
     position: absolute;
-    width: 164px;
-    height: 50px;
-    cursor: pointer;
-    background: url("../img/catHover.png") 0 0 no-repeat;
-    z-index: 5;
-    top: 25%;
-    left: 20%;
+    top: 0;
+    width: 100%;
+    z-index: 4;
 }
 
-/* Копилки и шкатулки */
-.categories__moneybox{
-    min-width: 275px;
-    position: relative;
-    min-height: 129px;
-    margin-top: 16px;
-    margin-bottom: 26px;
-    overflow: hidden;
-    z-index: 1;
-    border-radius: 10px;
+.categories__keychains:hover:before {
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    content: "";
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    left: 20%;
+    position: absolute;
+    top: 25%;
+    width: 164px;
+    z-index: 5;
+}
+
+.categories__moneybox {
     background: #fdec7d;
     background: radial-gradient(#ffffff, #a2d5fd);
+    border-radius: 10px;
+    margin-bottom: 26px;
+    margin-top: 16px;
+    min-height: 129px;
+    min-width: 275px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
-.categories__moneybox img{
-    position: absolute;
+.categories__moneybox img {
     margin-left: 70px;
-    overflow: hidden;
     margin-top: -5px;
-    min-width: 10px;
     max-height: 110px;
+    min-width: 10px;
+    overflow: hidden;
+    position: absolute;
     z-index: 2;
 }
 
-.categories__moneybox span{
-    text-align: center;
-    position: absolute;
+.categories__moneybox span {
+    background: rgba(255, 255, 255, 0.75);
     bottom: 0;
+    color: #444444;
+    font-family: "Exo 2";
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 5px;
     min-height: 40px;
     min-width: 275px;
+    position: absolute;
+    text-align: center;
     z-index: 3;
-    background: rgba(255,255,255,0.75);
-    font-size: 20px;
-    color: #444444;
-    font-weight: 300;
-    font-family: "Exo 2";
-    margin-top: 5px;
 }
 
 .categories__moneybox:hover:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 4;
-    top: 0;
-    left: 0;
     background: #fff;
     border-radius: 10px;
-    opacity: 0.75;
-}
-
-.categories__moneybox:hover:before{
     content: "";
-    display: inline-block;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.75;
     position: absolute;
-    width: 164px;
-    height: 50px;
-    cursor: pointer;
-    background: url("../img/catHover.png") 0 0 no-repeat;
-    z-index: 5;
-    top: 25%;
-    left: 20%;
+    top: 0;
+    width: 100%;
+    z-index: 4;
 }
 
-/* Интерьер */
-.categories__interior{
-    margin-top: 55px;
-    margin-left: 20px;
-    min-width: 275px;
-    overflow: hidden;
-    z-index: 1;
-    position: relative;
-    min-height: 129px;
-    border-radius: 10px;
+.categories__moneybox:hover:before {
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    content: "";
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    left: 20%;
+    position: absolute;
+    top: 25%;
+    width: 164px;
+    z-index: 5;
+}
+
+.categories__interior {
     background: #fdec7d;
     background: radial-gradient(#ffffff, #ffbc68);
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 55px;
+    min-height: 129px;
+    min-width: 275px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
-.categories__interior img{
-    position: absolute;
+.categories__interior img {
     margin-top: 5px;
-    min-width: 275px;
     min-height: 129px;
+    min-width: 275px;
+    position: absolute;
     z-index: 2;
 }
 
-.categories__interior span{
-    text-align: center;
-    position: absolute;
+.categories__interior span {
+    background: rgba(255, 255, 255, 0.75);
     bottom: 0;
-    height: 40px;
-    z-index: 3;
-    width: 275px;
-    background: rgba(255,255,255,0.75);
-    font-size: 20px;
     color: #444444;
-    font-weight: 300;
     font-family: "Exo 2";
+    font-size: 20px;
+    font-weight: 300;
+    height: 40px;
     padding-top: 5px;
+    position: absolute;
+    text-align: center;
+    width: 275px;
+    z-index: 3;
 }
 
 .categories__interior:hover:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 4;
-    top: 0;
-    left: 0;
     background: #fff;
     border-radius: 10px;
-    opacity: 0.75;
-}
-
-.categories__interior:hover:before{
     content: "";
-    display: inline-block;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.75;
     position: absolute;
-    width: 164px;
-    height: 50px;
-    cursor: pointer;
-    background: url("../img/catHover.png") 0 0 no-repeat;
-    z-index: 5;
-    top: 25%;
-    left: 20%;
+    top: 0;
+    width: 100%;
+    z-index: 4;
 }
 
-/* Канцелярия */
-.categories__office{
-    margin-top: 16px;
-    margin-left: 20px;
-    min-width: 275px;
-    z-index: 1;
-    overflow: hidden;
-    position: relative;
-    min-height: 129px;
-    border-radius: 10px;
+.categories__interior:hover:before {
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    content: "";
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    left: 20%;
+    position: absolute;
+    top: 25%;
+    width: 164px;
+    z-index: 5;
+}
+
+.categories__office {
     background: #fdec7d;
     background: radial-gradient(#ffffff, #ffbc68);
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 16px;
+    min-height: 129px;
+    min-width: 275px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
-.categories__office img{
-    position: absolute;
-    margin-top: 5px;
+.categories__office img {
     margin-left: 45px;
+    margin-top: 5px;
     max-width: 275px;
     min-height: 110px;
+    position: absolute;
     z-index: 2;
 }
 
-.categories__office span{
-    text-align: center;
-    position: absolute;
+.categories__office span {
+    background: rgba(255, 255, 255, 0.75);
     bottom: 0;
-    height: 40px;
-    z-index: 3;
-    width: 275px;
-    background: rgba(255,255,255,0.75);
-    font-size: 20px;
     color: #444444;
-    font-weight: 300;
     font-family: "Exo 2";
+    font-size: 20px;
+    font-weight: 300;
+    height: 40px;
     margin-top: 5px;
+    position: absolute;
+    text-align: center;
+    width: 275px;
+    z-index: 3;
 }
 
 .categories__office:hover:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 4;
-    top: 0;
-    left: 0;
     background: #fff;
     border-radius: 10px;
-    opacity: 0.75;
-}
-
-.categories__office:hover:before{
     content: "";
-    display: inline-block;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.75;
     position: absolute;
-    width: 164px;
-    height: 50px;
-    cursor: pointer;
-    background: url("../img/catHover.png") 0 0 no-repeat;
-    z-index: 5;
-    top: 25%;
-    left: 20%;
+    top: 0;
+    width: 100%;
+    z-index: 4;
 }
 
-/* Кожанные изделия */
-.categories__leather{
-    margin-top: 16px;
-    margin-left: 20px;
-    min-height: 275px;
-    z-index: 1;
-    min-width: 275px;
-    overflow: hidden;
-    border-radius: 10px;
-    position: relative;
+.categories__office:hover:before {
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    content: "";
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    left: 20%;
+    position: absolute;
+    top: 25%;
+    width: 164px;
+    z-index: 5;
+}
+
+.categories__leather {
     background: #fdec7d;
     background: radial-gradient(#ffffff, #f1a97e);
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 16px;
+    min-height: 275px;
+    min-width: 275px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
-.categories__leather img{
-  position: absolute;
-  min-width: 220px;
-  z-index: 2;
-  min-height: 110px;
-  margin-top: 30px;
-  margin-left: 10px;
-}
-
-.categories__leather span{
-    text-align: center;
+.categories__leather img {
+    margin-left: 10px;
+    margin-top: 30px;
+    min-height: 110px;
+    min-width: 220px;
     position: absolute;
+    z-index: 2;
+}
+
+.categories__leather span {
+    background: rgba(255, 255, 255, 0.75);
     bottom: 0;
-    z-index: 3;
+    color: #444444;
+    font-family: "Exo 2";
+    font-size: 20px;
+    font-weight: 300;
     min-height: 40px;
     min-width: 275px;
-    background: rgba(255,255,255,0.75);
-    font-size: 20px;
-    color: #444444;
-    font-weight: 300;
-    font-family: "Exo 2";
     padding-top: 5px;
+    position: absolute;
+    text-align: center;
+    z-index: 3;
 }
 
 .categories__leather:hover:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 4;
-    top: 0;
-    left: 0;
     background: #fff;
     border-radius: 10px;
-    opacity: 0.75;
-}
-
-.categories__leather:hover:before{
     content: "";
-    display: inline-block;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.75;
     position: absolute;
-    width: 164px;
-    height: 50px;
-    cursor: pointer;
-    background: url("../img/catHover.png") 0 0 no-repeat;
-    z-index: 5;
-    top: 40%;
-    left: 20%;
+    top: 0;
+    width: 100%;
+    z-index: 4;
 }
 
-/* Аксессуары для телефона */
-.categories__accessories{
+.categories__leather:hover:before {
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    content: "";
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    left: 20%;
+    position: absolute;
+    top: 40%;
+    width: 164px;
+    z-index: 5;
+}
+
+.categories__accessories {
+    background: #fdec7d;
+    background: radial-gradient(#ffffff, #eb6f5f);
+    border-radius: 10px;
     margin-left: 20px;
     margin-top: 55px;
     min-height: 275px;
     min-width: 275px;
-    z-index: 1;
     overflow: hidden;
-    border-radius: 10px;
     position: relative;
-    background: #fdec7d;
-    background: radial-gradient(#ffffff, #eb6f5f);
+    z-index: 1;
 }
 
-.categories__accessories img{
-  position: absolute;
-  min-width: 275px;
-  min-height: 140px;
-  z-index: 2;
-  margin-top: 20px;
-}
-
-.categories__accessories span{
-    text-align: center;
+.categories__accessories img {
+    margin-top: 20px;
+    min-height: 140px;
+    min-width: 275px;
     position: absolute;
+    z-index: 2;
+}
+
+.categories__accessories span {
+    background: rgba(255, 255, 255, 0.75);
     bottom: 0;
-    z-index: 3;
+    color: #444444;
+    font-family: "Exo 2";
+    font-size: 20px;
+    font-weight: 300;
     min-height: 40px;
     min-width: 275px;
-    background: rgba(255,255,255,0.75);
-    font-size: 20px;
-    color: #444444;
-    font-weight: 300;
-    font-family: "Exo 2";
     padding-top: 5px;
+    position: absolute;
+    text-align: center;
+    z-index: 3;
 }
 
 .categories__accessories:hover:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 4;
-    top: 0;
-    left: 0;
     background: #fff;
     border-radius: 10px;
-    opacity: 0.75;
-}
-
-.categories__accessories:hover:before{
     content: "";
-    display: inline-block;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.75;
     position: absolute;
-    width: 164px;
-    height: 50px;
-    cursor: pointer;
-    background: url("../img/catHover.png") 0 0 no-repeat;
-    z-index: 5;
-    top: 40%;
-    left: 20%;
+    top: 0;
+    width: 100%;
+    z-index: 4;
 }
 
-/* Изделия из дерева */
-.categories__wood{
-    min-width: 275px;
-    margin-left: 20px;
-    position: relative;
-    min-height: 129px;
-    z-index: 1;
-    margin-top: 16px;
-    overflow: hidden;
-    border-radius: 10px;
+.categories__accessories:hover:before {
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    content: "";
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    left: 20%;
+    position: absolute;
+    top: 40%;
+    width: 164px;
+    z-index: 5;
+}
+
+.categories__wood {
     background: #fdec7d;
     background: radial-gradient(#ffffff, #79d2d3);
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 16px;
+    min-height: 129px;
+    min-width: 275px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
-.categories__wood img{
-    position: absolute;
-    margin-top: 5px;
+.categories__wood img {
     margin-left: 50px;
+    margin-top: 5px;
     max-width: 275px;
     min-height: 80px;
+    position: absolute;
     z-index: 2;
 }
 
-.categories__wood span{
-    text-align: center;
-    position: absolute;
+.categories__wood span {
+    background: rgba(255, 255, 255, 0.75);
     bottom: 0;
+    color: #444444;
+    font-family: "Exo 2";
+    font-size: 20px;
+    font-weight: 300;
     min-height: 40px;
     min-width: 275px;
-    z-index: 3;
-    background: rgba(255,255,255,0.75);
-    font-size: 20px;
-    color: #444444;
-    font-weight: 300;
-    font-family: "Exo 2";
     padding-top: 5px;
+    position: absolute;
+    text-align: center;
+    z-index: 3;
 }
 
 .categories__wood:hover:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 4;
-    top: 0;
-    left: 0;
     background: #fff;
     border-radius: 10px;
-    opacity: 0.75;
-}
-
-.categories__wood:hover:before{
     content: "";
-    display: inline-block;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.75;
     position: absolute;
-    width: 164px;
-    height: 50px;
-    cursor: pointer;
-    background: url("../img/catHover.png") 0 0 no-repeat;
-    z-index: 5;
-    top: 25%;
-    left: 20%;
+    top: 0;
+    width: 100%;
+    z-index: 4;
 }
 
-/* Посуда */
-.categories__dishes{
-    min-width: 275px;
-    margin-left: 20px;
-    z-index: 1;
-    position: relative;
-    overflow: hidden;
-    min-height: 129px;
-    margin-top: 16px;
-    border-radius: 10px;
+.categories__wood:hover:before {
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    content: "";
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    left: 20%;
+    position: absolute;
+    top: 25%;
+    width: 164px;
+    z-index: 5;
+}
+
+.categories__dishes {
     background: #fdec7d;
     background: radial-gradient(#ffffff, #79d2d3);
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 16px;
+    min-height: 129px;
+    min-width: 275px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
-.categories__dishes img{
-    position: absolute;
+.categories__dishes img {
     margin-left: 25px;
     max-width: 275px;
     min-height: 110px;
+    position: absolute;
     z-index: 2;
 }
 
-.categories__dishes span{
-    text-align: center;
-    position: absolute;
+.categories__dishes span {
+    background: rgba(255, 255, 255, 0.75);
     bottom: 0;
+    color: #444444;
+    font-family: "Exo 2";
+    font-size: 20px;
+    font-weight: 300;
     min-height: 40px;
     min-width: 275px;
-    z-index: 3;
-    background: rgba(255,255,255,0.75);
-    font-size: 20px;
-    color: #444444;
-    font-weight: 300;
-    font-family: "Exo 2";
     padding-top: 5px;
+    position: absolute;
+    text-align: center;
+    z-index: 3;
 }
 
 .categories__dishes:hover:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 4;
-    top: 0;
-    left: 0;
     background: #fff;
     border-radius: 10px;
-    opacity: 0.75;
-}
-
-.categories__dishes:hover:before{
     content: "";
-    display: inline-block;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.75;
     position: absolute;
-    width: 164px;
-    height: 50px;
-    cursor: pointer;
-    background: url("../img/catHover.png") 0 0 no-repeat;
-    z-index: 5;
-    top: 25%;
-    left: 20%;
+    top: 0;
+    width: 100%;
+    z-index: 4;
 }
 
-/* Настольные игры */
-.categories__board{
-    margin-top: 55px;
-    margin-left: 20px;
-    min-width: 275px;
-    z-index: 1;
-    overflow: hidden;
-    position: relative;
-    min-height: 129px;
-    border-radius: 10px;
+.categories__dishes:hover:before {
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    content: "";
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    left: 20%;
+    position: absolute;
+    top: 25%;
+    width: 164px;
+    z-index: 5;
+}
+
+.categories__board {
     background: #fdec7d;
     background: radial-gradient(#ffffff, #e87f9a);
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 55px;
+    min-height: 129px;
+    min-width: 275px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
-.categories__board img{
-    position: absolute;
+.categories__board img {
     margin-left: 45px;
     max-width: 190px;
     min-height: 129px;
+    position: absolute;
     z-index: 2;
 }
 
-.categories__board span{
-    text-align: center;
-    position: absolute;
+.categories__board span {
+    background: rgba(255, 255, 255, 0.75);
     bottom: 0;
-    height: 40px;
-    z-index: 3;
-    width: 275px;
-    background: rgba(255,255,255,0.75);
-    font-size: 20px;
     color: #444444;
-    font-weight: 300;
     font-family: "Exo 2";
+    font-size: 20px;
+    font-weight: 300;
+    height: 40px;
     padding-top: 5px;
+    position: absolute;
+    text-align: center;
+    width: 275px;
+    z-index: 3;
 }
 
 .categories__board:hover:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 4;
-    top: 0;
-    left: 0;
     background: #fff;
     border-radius: 10px;
-    opacity: 0.75;
-}
-
-.categories__board:hover:before{
     content: "";
-    display: inline-block;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.75;
     position: absolute;
-    width: 164px;
-    height: 50px;
-    cursor: pointer;
-    background: url("../img/catHover.png") 0 0 no-repeat;
-    z-index: 5;
-    top: 25%;
-    left: 20%;
+    top: 0;
+    width: 100%;
+    z-index: 4;
 }
 
-/* Часы */
-.categories__clock{
-    margin-top: 16px;
-    margin-left: 20px;
-    min-width: 275px;
-    position: relative;
-    overflow: hidden;
-    min-height: 129px;
-    z-index: 1;
-    border-radius: 10px;
+.categories__board:hover:before {
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    content: "";
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    left: 20%;
+    position: absolute;
+    top: 25%;
+    width: 164px;
+    z-index: 5;
+}
+
+.categories__clock {
     background: #fdec7d;
     background: radial-gradient(#ffffff, #e87f9a);
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 16px;
+    min-height: 129px;
+    min-width: 275px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
-.categories__clock img{
-    position: absolute;
+.categories__clock img {
     margin-left: 50px;
     max-width: 190px;
     min-height: 129px;
+    position: absolute;
     z-index: 2;
 }
 
-.categories__clock span{
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    height: 40px;
-    z-index: 3;
-    width: 275px;
-    background: rgba(255,255,255,0.75);
+.categories__clock span {
+    background: rgba(255, 255, 255, 0.75);
     border-radius: 10px;
-    font-size: 20px;
+    bottom: 0;
     color: #444444;
-    font-weight: 300;
     font-family: "Exo 2";
+    font-size: 20px;
+    font-weight: 300;
+    height: 40px;
     padding-top: 5px;
+    position: absolute;
+    text-align: center;
+    width: 275px;
+    z-index: 3;
 }
 
 .categories__clock:hover:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 4;
-    top: 0;
-    left: 0;
     background: #fff;
     border-radius: 10px;
-    opacity: 0.75;
-}
-
-.categories__clock:hover:before{
     content: "";
-    display: inline-block;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.75;
     position: absolute;
-    width: 164px;
-    height: 50px;
-    cursor: pointer;
-    background: url("../img/catHover.png") 0 0 no-repeat;
-    z-index: 5;
-    top: 25%;
-    left: 20%;
+    top: 0;
+    width: 100%;
+    z-index: 4;
 }
 
-.categories__clock span:hover:before{
+.categories__clock:hover:before {
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    content: "";
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    left: 20%;
+    position: absolute;
+    top: 25%;
+    width: 164px;
+    z-index: 5;
+}
+
+.categories__clock span:hover:before {
     visibility: hidden;
 }
 
-/* Wow */
-.categories__wow{
-margin-top: 16px;
-margin-left: 20px;
-min-height: 275px;
-min-width: 275px;
-/*overflow: hidden;*/
-z-index: 1;
-border-radius: 10px;
-position: relative;
-background: #fdec7d;
-background: radial-gradient(#ffffff, #f1a97e);
+.categories__wow {
+    background: #fdec7d;
+    background: radial-gradient(#ffffff, #f1a97e);
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 16px;
+    min-height: 275px;
+    min-width: 275px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
-.categories__wow img{
-position: absolute;
-min-width: 275px;
-min-height: 275px;
-z-index: 2;
-margin-left: -5px;
+.categories__wow img {
+    margin-left: -5px;
+    margin-top: 2px;
+    min-height: 275px;
+    min-width: 275px;
+    position: absolute;
+    z-index: 2;
 }
 
 .categories__wow:hover:after {
-content: "";
-display: block;
-width: 100%;
-height: 100%;
-position: absolute;
-z-index: 4;
-top: 0;
-left: 0;
-background: #fff;
-border-radius: 10px;
-opacity: 0.75;
+    background: #fff;
+    border-radius: 10px;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 4;
 }
 
-.categories__wow:hover:before{
-content: "";
-display: inline-block;
-position: absolute;
-width: 164px;
-height: 50px;
-cursor: pointer;
-background: url("../img/catHover.png") 0 0 no-repeat;
-z-index: 5;
-top: 40%;
-left: 20%;
+.categories__wow:hover:before {
+    background: url("../img/catHover.png") 0 0 no-repeat;
+    content: "";
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    left: 20%;
+    position: absolute;
+    top: 40%;
+    width: 164px;
+    z-index: 5;
 }
 
-/* Популярные товары */
-/*
-.products{
+.products {
     background: url("../img/productsBack.png") repeat-x top;
 }
 
-.products h2{
-    margin-top: 55px;
-    font-size: 50px;
+.products__title {
     color: #a4149f;
-    font-weight: 400;
     font-family: "Nautilus Pompilius";
-}
-*/
-/* Группировка фильтов */
-
-.filters{
-background: #ffc55a;
-height: 470px;
-text-align: center;
-position: relative;
-z-index: 1;
+    font-size: 50px;
+    font-weight: 400;
+    margin-top: 55px;
+    text-align: center;
 }
 
-/*.filters::after{
+.products__tablets {
+    background: #ffffff;
+    border-radius: 10px;
+    height: 365px;
+    width: 245px;
+}
+
+.products__speakers {
+    background: #ffffff;
+    border-radius: 10px;
+    height: 365px;
+    width: 245px;
+}
+
+.products__shower {
+    background: #ffffff;
+    border-radius: 10px;
+    height: 365px;
+    width: 245px;
+}
+
+.products__anti {
+    background: #ffffff;
+    border-radius: 10px;
+    height: 365px;
+    width: 245px;
+}
+
+.filters {
+    background: #ffc55a;
+    height: 470px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.filters::after {
+    background: url("../img/filtersBack.png");
+    bottom: -10px;
     content: '';
+    height: 20px;
+    left: 0;
+    overflow: visible;
     position: absolute;
     width: 100%;
-    height: 20px;
-    background: url("../img/filtersBack.png");
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-    overflow: visible;
-}*/
-
-.filters h2{
-margin-top: 60px;
-font-size: 40px;
-color: #ffffff;
-font-weight: 400;
-font-family: "Nautilus Pompilius";
+    z-index: 5;
 }
 
-.filters p{
-margin-top: -10px;
-font-size: 20px;
-color: #ffffff;
-font-weight: 400;
-font-family: "Exo 2";
+.filters h2 {
+    color: #ffffff;
+    font-family: "Nautilus Pompilius";
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 60px;
 }
 
-.filters__menu{
+.filters p {
+    color: #ffffff;
+    font-family: "Exo 2";
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+.filters__menu {
     padding-top: 5px;
 }
 
-.filters__menu-item-circle{
-    min-width: 193px;
-    min-height: 193px;
-    text-align: center;
-    margin-left: 34px;
-    padding-top: 7px;
+.filters__menu-item-circle {
     background: #ffffff;
     border: 3px solid #ffe5ad;
-    line-height: 120%;
     border-radius: 50%;
+    line-height: 120%;
+    margin-left: 34px;
+    min-height: 193px;
+    min-width: 193px;
+    padding-top: 7px;
+    position: relative;
+    text-align: center;
 }
 
-.filters__menu-item-circle a{
-    color: #444444;
+.filters__menu-item a {
+    position: relative;
+    text-decoration: none;
 }
 
 .filters__menu-item-circle:hover {
     background: #ffffff;
     border: 3px solid #d17185;
-    line-height: 120%;
     border-radius: 50%;
-    text-align: center;
     cursor: pointer;
+    line-height: 120%;
+    position: relative;
+    text-align: center;
 }
 
-.filters__menu-item p{
-    margin-left: 40px;
-    margin-top: 15px;
+.filters__menu-item-circle p {
+    font-family: "Nautilus Pompilius";
     font-size: 24px;
     font-weight: 400;
-    font-family: "Nautilus Pompilius";
+    margin-left: 20px;
+    margin-top: 200px;
+    position: absolute;
+    text-decoration: none;
 }
 
-.filters__menu-item p:hover{
+.filters__menu-item p:hover {
     color: #a4149f;
-    cursor: default;
 }
 
-/* СЕО текст */
+.menu-item-year-img {
+    margin-left: -95px;
+    margin-top: 10px;
+    position: absolute;
+}
 
-.seo{
+.menu-item-year {
+    margin-left: -95px;
+    margin-top: 10px;
+    position: absolute;
+}
+
+.menu-item-year {
+    margin-left: -95px;
+    margin-top: 10px;
+    position: absolute;
+}
+
+.menu-item-year {
+    margin-left: -95px;
+    margin-top: 10px;
+    position: absolute;
+}
+
+.menu-item-year {
+    margin-left: -95px;
+    margin-top: 10px;
+    position: absolute;
+}
+
+.seo {
     background: #ffffff;
+    height: 565px;
 }
 
-.seo__text h2{
-    margin-top: 55px;
-    font-size: 40px;
+.seo__text h2 {
+    background: linear-gradient(0deg, #a4139f, #434c59);
     color: #a4149f;
-    font-weight: 400;
     font-family: "Nautilus Pompilius";
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 55px;
+    min-height: 60px;
+    webkit-background-clip: text;
+    webkit-text-fill-color: transparent;
 }
 
-.seo__text p{
-    font-size: 16px;
-    width: 537px;
-    line-height: 22px;
+.seo__text p {
     color: #444444;
-    font-weight: 300;
     font-family: "Exo 2";
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+    width: 537px;
 }
 
-.seo_banner{
-
+.seo_banner {
+    height: 539px;
+    overflow: hidden;
+    position: relative;
 }
 
-.seoBallon{
+.seoBallon {
     margin-top: 55px;
 }
 
-.seo__banner p{
-    width: 313px;
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 300;
-    font-family: "Exo 2";
-    text-align: right;
-    padding-top: 30px;
+.seoPhoto {
+    height: 105%;
+    margin-left: -50px;
+    margin-top: 0px;
+    position: absolute;
 }
 
-.seo__banner a{
+.seo__banner p {
+    font-family: "Exo 2";
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding-top: 30px;
+    text-align: right;
+    width: 313px;
+}
+
+.seo__banner a {
     color: #a4149f;
     text-decoration: none;
 }
 
-.seo__banner a:hover{
+.seo__banner a:hover {
     color: #a4149f;
 }
-/* Подписка */
 
-
-
-/* Футер */
-
-.footer{
-    background: #fff;
+.subs {
+    background: #6fcee6;
+    height: 147px;
+    position: relative;
 }
 
-.footer p{
-    width: 370px;
+.subs.subs::before {
+    background: url("../img/subWave.png");
+    content: "";
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: -5%;
+    width: 100%;
+}
+
+.subs::after {
+    background: url("../img/subWave.png");
+    bottom: -5%;
+    content: "";
+    height: 20px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.subs h3 {
+    color: #ffffff;
+    font-family: "Nautilus Pompilius";
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-top: 20px;
+}
+
+.subs p {
+    color: #ffffff;
     font-family: "Exo 2";
     font-size: 14px;
+    font-weight: 300;
+    margin-top: -5px;
+}
+
+.subs form {
+    border-radius: 18px;
+}
+
+.subs [type="email"] {
+    border: none;
+    border-radius: 18px;
+    height: 35px;
+    outline: none;
+    padding-left: 20px;
+    position: relative;
+    vertical-align: middle;
+    width: 539px;
+}
+
+.subs [type="submit"] {
+    background-color: #ffdc39;
+    border: none;
+    border-radius: 18px;
+    color: #444444;
+    font-family: "Exo 2";
+    font-size: 14px;
+    font-weight: 500;
+    height: 35px;
+    line-height: 22px;
+    margin-left: -229px;
+    outline: none;
+    position: absolute;
+    width: 229px;
+}
+
+.footer {
+    background: #fff;
+    margin-top: 30px;
+}
+
+.footer p {
+    font-family: "Exo 2";
+    font-size: 14px;
+    width: 370px;
 }
