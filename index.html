@@ -3,15 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>podari.ru</title>
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"crossorigin="anonymous">
     <link rel="stylesheet" href="fonts/fonts.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
+<script>
+	$(function() {
+	var sldr = $('.sldr'),
+	sldrContent = sldr.html(),
+	slideWidth = $('.sl_ctr').outerWidth(),
+	slideCount = $('.sldr img').length,
+	prv_b = $('.prv_b'),
+	nxt_b = $('.nxt_b'),
+	sldrInterval = 3300,
+	animateTime = 1000,
+	course = 1,
+	margin = - slideWidth;
+	$('.sldr img:last').clone().prependTo('.sldr');
+	$('.sldr img').eq(1).clone().appendTo('.sldr');
+	$('.sldr').css('margin-left',-slideWidth);
+	function nxt_bSlide()
+	{interval=window.setInterval(animate,sldrInterval)}
+	function animate(){
+		if(margin==-slideCount*slideWidth-slideWidth){sldr.css({'marginLeft':-slideWidth});margin=-slideWidth*2}
+		else if(margin==0&&course==-1){sldr.css({'marginLeft':-slideWidth*slideCount});margin=-slideWidth*slideCount+slideWidth}
+		else
+			{margin=margin-slideWidth*(course)}sldr.animate({'marginLeft':margin},animateTime)}
+	function sldrStop(){window.clearInterval(interval)}prv_b.click(function(){
+			if(sldr.is(':animated')){return false}var course2=course;course=-1;
+			animate();course=course2});
+	nxt_b.click(function(){
+		if(sldr.is(':animated')){return false}var course2=course;course=1;animate();course=course2});
+	sldr.add(nxt_b).add(prv_b).hover(function(){sldrStop()},nxt_bSlide);nxt_bSlide()});
+</script>
 </head>
 <body>
-
-
-
 <header id="top" class="top">
 	<div class="container">
 	    <div class="row">
@@ -69,13 +95,46 @@
 	    <div class="row">
 	        <div class="cl-lg-3">
 	            <div class="banner__logo">
-	            <img src="img/bannerLogo.png" alt="">
+	            	<img src="img/bannerLogo.png" alt="">
 	            </div>
 	        </div>
 	        <div class="cl-lg-9 ml-auto">
-	            <div class="banner__slider">
-	            	<!-- Слайдер будет чуть позже, если будет -->
-	                <img src="img/banner.png" alt="">
+	        	<div class="sl_ctr">
+		            <div class="sldr">  
+						<img src="img/slide1.png" alt="">
+						<img src="img/slide2.png" alt="">
+						<img src="img/slide3.png" alt="">
+					</div>
+						<div class="prv_b"><i class="fas fa-arrow-circle-left"></i></div>
+						<div class="nxt_b"><i class="fas fa-arrow-circle-right"></i></div>
+				</div>
+		</div>
+
+
+	        	<!-- Полурабочий слайдер --> 
+	            <!--<div class="banner__slider">
+	            	<div id="slider-1" class="slides"><img src="img/slide1.png" alt="" /></div>
+	            	<div id="slider-2" class="slides"><img src="img/slide2.png" alt="" /></div>
+	            	<div id="slider-3" class="slides"><img src="img/slide3.png" alt="" /></div>
+	            	<input id="img-1" class="slide_img" checked="checked" name="slide_img" type="radio" />
+					<input id="img_2" class="slide_img" name="slide_img" type="radio" />
+					<input id="img_3" class="slide_img" name="slide_img" type="radio" />
+					<div id="arrow_next">
+						 <label for="img_1"><i class="fa fa-angle-right" aria-hidden="true"></i></label>
+						 <label for="img_2"><i class="fa fa-angle-right" aria-hidden="true"></i></label>
+						 <label for="img_3"><i class="fa fa-angle-right" aria-hidden="true"></i></label>
+					</div>
+					<div id="arrow_prev">
+						<label for="img_1"><i class="fa fa-angle-left" aria-hidden="true"></i></label>
+						<label for="img_2"><i class="fa fa-angle-left" aria-hidden="true"></i></label>
+						<label for="img_3"><i class="fa fa-angle-left" aria-hidden="true"></i></label>
+					</div>
+					<div class="switchers">
+						<label id="switcher1" class="switcher" for="img_1"></label>
+						<label id="switcher2" class="switcher" for="img_2"></label>
+						<label id="switcher3" class="switcher" for="img_3"></label>
+					</div>-->
+	                <!--<img src="img/banner.png" alt="">-->
 	            </div>
 	        </div>
 	    </div>
@@ -159,30 +218,93 @@
 		</div>
 		<div class="row justify-content-center">
 			<div class="col-3">
-				<div class="products__tablets">
-					<!--<img src="#">-->
-					<p></p>
-					<!--<img src="">-->
-					<span> - 10 голосов</span>
-					<p>499 руб.</p>
-					<button type="button">
-						В корзину
-					</button>
+				<div class="products__item">
+					<a href=""><img src="img/products1.png"></a>
+					<p class="products__item-title"><a href="">Таблетки для счастья</a></p>
+					<div class="stars"><span> - 10 голосов</span></div>
+						<span class="products-price">499 руб.</span>
+						<span class="products-add"><a href="#">
+							В корзину
+						</a></span>
 				</div>
 			</div>
 			<div class="col-3">
-				<div class="products__speakers">
-					
+				<div class="products__item">
+					<a href=""><img src="img/products2.png"></a>
+					<p class="products__item-title"><a href="#">Световые колонки</a></p>
+					<div class="stars"><span> - 10 голосов</span></div>
+						<span class="products-price">699 руб.</span>
+						<span class="products-add"><a href="#">
+							В корзину
+						</a></span>
 				</div>
 			</div>
 			<div class="col-3">
-				<div class="products__shower">
-					
+				<div class="products__item">
+					<a href=""><img src="img/products3.png"></a>
+					<p class="products__item-title"><a href="">Подсветка для душа</a></p>
+					<div class="stars"><span> - 10 голосов</span></div>
+						<span class="products-price">899 руб.</span>
+						<span class="products-add"><a href="#">
+							В корзину
+						</a></span>
 				</div>
 			</div>
 			<div class="col-3">
-				<div class="products__anti">
-					
+				<div class="products__item">
+					<a href=""><img src="img/products4.png"></a>
+					<p class="products__item-title"><a href="">АнтиЖОР</a></p>
+					<div class="stars"><span> - 10 голосов</span></div>
+						<span class="products-price">1499 руб.</span>
+						<span class="products-add"><a href="#">
+							В корзину
+						</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-3">
+				<div class="products__item">
+					<a href=""><img src="img/products5.png"></a>
+					<p class="products__item-title"><a href="">набор носков</a></p>
+					<div class="stars"><span> - 10 голосов</span></div>
+						<span class="products-price">499 руб.</span>
+						<span class="products-add"><a href="#">
+							В корзину
+						</a></span>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="products__item">
+					<a href=""><img src="img/products6.png"></a>
+					<p class="products__item-title"><a href="#">Печатный $ станок</a></p>
+					<div class="stars"><span> - 10 голосов</span></div>
+						<span class="products-price">699 руб.</span>
+						<span class="products-add"><a href="#">
+							В корзину
+						</a></span>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="products__item">
+					<a href=""><img src="img/products7.png"></a>
+					<p class="products__item-title"><a href="">Мужская косметичка</a></p>
+					<div class="stars"><span> - 10 голосов</span></div>
+						<span class="products-price">899 руб.</span>
+						<span class="products-add"><a href="#">
+							В корзину
+						</a></span>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="products__item">
+					<a href=""><img src="img/products8.png"></a>
+					<p class="products__item-title"><a href="">Копилка "Свин"</a></p>
+					<div class="stars"><span> - 10 голосов</span></div>
+						<span class="products-price">1499 руб.</span>
+						<span class="products-add"><a href="#">
+							В корзину
+						</a></span>
 				</div>
 			</div>
 		</div>
@@ -206,8 +328,8 @@
 						<a href="#">
 						<div class="filters__menu-item-circle">
 								
-							<img src="img/filters1.png" class="menu-item-year-img" alt="День рождения">
-							<p class="menu-item-year-p">День рождения</p>
+							<img src="img/filters1.png" class="menu-item-1-img" alt="День рождения">
+							<p>День рождения</p>
 						</div>
 						
 						</a>
@@ -215,9 +337,7 @@
 					<div class="filters__menu-item">
 						<a href="#">
 						<div class="filters__menu-item-circle">
-							
-								
-							<!--<img src="" alt="">-->
+							<img src="img/filters2.png" class="menu-item-2-img" alt="">
 							<p>День влюбленных</p>
 							
 						</div>
@@ -226,34 +346,25 @@
 					<div class="filters__menu-item">
 						<a href="#">
 						<div class="filters__menu-item-circle">
-							
-								
-							<!--<img src="" alt="">-->
-							<p>Новогодние
- праздники</p>
+							<img src="img/filters3.png" class="menu-item-3-img" alt="">
+							<p>Новогодние праздники</p>
 							
 						</div>
 						</a>
 					</div>
 					<div class="filters__menu-item">
 						<a href="#">
-						<div class="filters__menu-item-circle">
-							
-								
-							<!--<img src="" alt="">-->
+						<div class="filters__menu-item-circle">	
+							<img src="img/filters4.png" class="menu-item-4-img" alt="">
 							<p>День защитника отечества</p>
-							
 						</div>
 						</a>
 					</div>
 					<div class="filters__menu-item">
 						<a href="#">
 						<div class="filters__menu-item-circle">
-							
-								
-							<!--<img src="" alt="">-->
-							<p>Прикольные 
-подарки</p>
+							<img src="img/filters5.png" class="menu-item-5-img" alt="">
+							<p>Прикольные подарки</p>
 							
 						</div>
 						</a>
@@ -353,7 +464,6 @@
 	</div>
 </footer>
 
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </body>
 </html>

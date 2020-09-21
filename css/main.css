@@ -80,7 +80,128 @@ a {
     padding-left: 80px;
 }
 
-.banner__slider {}
+.sl_ctr {
+    position:relative;
+    width: 860px;
+    height: 270px;
+    border-radius: 10px;
+    overflow:hidden;
+}
+
+.sldr{
+    position:relative;
+    width:10000px;
+    height:300px;
+}
+.sldr img{
+    float:left;
+}
+.prv_b, .nxt_b{
+    position:absolute;
+    top:115px;
+    display:block;
+    font-size: 30px;
+    color: #ffffff;
+    cursor:pointer;
+}
+.prv_b:hover, .nxt_b:hover{opacity:.6;}
+.prv_b{
+    left:10px;
+}
+.nxt_b{
+    right:10px;
+}
+
+
+/* Полурабочий слайдер */
+
+/*.banner__slider {
+    position: relative;
+    margin: 20px auto 0;
+    width: 860px;
+    height: 270px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+}
+.slides img {
+    width: 100%;
+    height: 100%;
+}
+
+.slide_img {
+  display: none;
+}
+
+#arrow_next label, #arrow_prev label {
+  color: #ffffff;
+  position: absolute;
+  visibility: hidden;
+  cursor: pointer;
+  top: 30%;
+  font-size: 60px;
+  visibility: visible;
+}
+#arrow_prev label {
+  left: 20px;
+}
+#arrow_next label {
+  right: 20px;
+}
+
+.switchers {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  bottom: 0;
+  text-align: center;
+}
+.switcher {
+  background: #ffcb5a;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: 7px;
+  margin: 0 4px;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#img_1:checked ~ #slider-1,
+#img_2:checked ~ #slider-2,
+#img_3:checked ~ #slider-3 
+{
+    visibility: visible;
+    opacity: 1;
+}
+
+#img_1:checked ~ div #switcher1,
+#img_2:checked ~ div #switcher2,
+#img_3:checked ~ div #switcher3
+{
+    background: #a4149f;
+}
+
+#img_1:checked ~ #arrow_next label:nth-child(2),
+#img_2:checked ~ #arrow_next label:nth-child(3),
+#img_3:checked ~ #arrow_next label:nth-child(1)
+{
+    visibility: visible;
+}
+
+#img_1:checked ~ #arrow_prev label:nth-child(3),
+#img_2:checked ~ #arrow_prev label:nth-child(1),
+#img_3:checked ~ #arrow_prev label:nth-child(2)
+{
+    visibility: visible;
+}*/
 
 .categories {
     background: url("../img/catPat.png");
@@ -95,7 +216,7 @@ a {
     left: 0;
     overflow: visible;
     position: absolute;
-    top: -10px;
+    top: -5px;
     width: 100%;
     z-index: 4;
 }
@@ -870,39 +991,94 @@ a {
 
 .products__title {
     color: #a4149f;
+    background: linear-gradient(180deg, #a4139f, #434c59);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-family: "Nautilus Pompilius";
     font-size: 50px;
     font-weight: 400;
-    margin-top: 55px;
+    margin-top: 50px;
+    padding-bottom: 50px;
     text-align: center;
 }
 
-.products__tablets {
+.products__item {
     background: #ffffff;
     border-radius: 10px;
     height: 365px;
+    width: 245px;
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+.products__item:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.products__item img{
     width: 245px;
 }
 
-.products__speakers {
-    background: #ffffff;
-    border-radius: 10px;
-    height: 365px;
-    width: 245px;
+.products__item img:hover{
+    opacity: 0.75;
 }
 
-.products__shower {
-    background: #ffffff;
-    border-radius: 10px;
-    height: 365px;
-    width: 245px;
+.products__item-title{
+    text-align: center;
+    font-weight: 200;
+    font-size: 21px;
+    font-family: "Exo 2";
 }
 
-.products__anti {
-    background: #ffffff;
-    border-radius: 10px;
-    height: 365px;
-    width: 245px;
+.products__item-title a{
+    text-decoration: none;
+    color: #444444;
+}
+
+.products-add{
+    float: right;
+    font-size: 14px;
+    color: #ffffff;
+    width: 113px;
+    text-align: center;
+    margin-top: 5px;
+    padding-top: 5px;
+    margin-right: 10px;
+    height: 30px;
+    background: #a4149f;
+    border-radius: 3px;
+    font-weight: 300;
+    font-family: "Exo 2";
+}
+
+.products-add a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.products-add:hover{
+    background: #c946c4;
+}
+
+.products-price{
+    font-size: 26px;
+    color: #a4149f;
+    font-weight: 400;
+    font-family: "Nautilus Pompilius";
+    margin-left: 10px;
+}
+
+.stars {
+  height: 14px;
+  line-height: 14px;
+  margin: 7px 0;
+  text-align: center;
+}
+.stars:before {
+  content: "\f005\f005\f005\f005\f006";
+  color: #EFB71C;
+  font-size: 14px;
+  font-family: FontAwesome;
 }
 
 .filters {
@@ -914,6 +1090,18 @@ a {
 }
 
 .filters::after {
+    background: url("../img/filtersBack.png");
+    top: -10px;
+    content: '';
+    height: 20px;
+    left: 0;
+    overflow: visible;
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+}
+
+.filters::before {
     background: url("../img/filtersBack.png");
     bottom: -10px;
     content: '';
@@ -977,7 +1165,7 @@ a {
     font-family: "Nautilus Pompilius";
     font-size: 24px;
     font-weight: 400;
-    margin-left: 20px;
+    margin-left: 10px;
     margin-top: 200px;
     position: absolute;
     text-decoration: none;
@@ -987,33 +1175,35 @@ a {
     color: #a4149f;
 }
 
-.menu-item-year-img {
+.menu-item-1-img {
     margin-left: -95px;
     margin-top: 10px;
     position: absolute;
 }
 
-.menu-item-year {
+.menu-item-2-img {
     margin-left: -95px;
+    margin-top: -5px;
+    position: absolute;
+}
+
+.menu-item-3-img {
+    margin-left: -93px;
+    margin-top: 34px;
+    width: 200px;
+    position: absolute;
+}
+
+.menu-item-4-img {
+    margin-left: -65px;
     margin-top: 10px;
     position: absolute;
 }
 
-.menu-item-year {
-    margin-left: -95px;
-    margin-top: 10px;
-    position: absolute;
-}
-
-.menu-item-year {
-    margin-left: -95px;
-    margin-top: 10px;
-    position: absolute;
-}
-
-.menu-item-year {
-    margin-left: -95px;
-    margin-top: 10px;
+.menu-item-5-img {
+    margin-left: -80px;
+    margin-top: 20px;
+    width: 170px;
     position: absolute;
 }
 
@@ -1023,15 +1213,15 @@ a {
 }
 
 .seo__text h2 {
-    background: linear-gradient(0deg, #a4139f, #434c59);
+    background: linear-gradient(180deg, #a4139f, #434c59);
     color: #a4149f;
     font-family: "Nautilus Pompilius";
     font-size: 40px;
     font-weight: 400;
     margin-top: 55px;
     min-height: 60px;
-    webkit-background-clip: text;
-    webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .seo__text p {
@@ -1085,7 +1275,7 @@ a {
     position: relative;
 }
 
-.subs.subs::before {
+.subs::before {
     background: url("../img/subWave.png");
     content: "";
     height: 20px;
